@@ -18,7 +18,7 @@ board_2 = [["o","x","o"],
            ["x","x","x"], 
            ["o","o","x"]]
 
-# Column win o
+# Column win o, can also be a diagonal win coincidentally
 board_3 = [["o","x","o"], 
            ["o","o","x"], 
            ["o","x","o"]]
@@ -37,8 +37,8 @@ board_5 = [["o","x","o"],
 
 
 # Defining an array of games to loop over for testing           
-games = [board_1]
-# games = [board_1, board_2, board_3, board_4, board_5]
+# games = [board_1]
+games = [board_1, board_2, board_3, board_4, board_5]
 
 
 class State:
@@ -78,8 +78,8 @@ class State:
 
             tracker = []   
             for row in board: # (Bug fix)
-            # for row[column] in board: # (Original code, problem: here 'row[column]' is weird syntax to  it recursively 
-                print(row[column])
+            # for row[column] in board: # (Original code, problem: here 'row[column]' is weird syntax and it ends up calling the rows in the board recursively
+                # print(row[column])
                 tracker.append(row[column])
 
             if tracker == o_win:
